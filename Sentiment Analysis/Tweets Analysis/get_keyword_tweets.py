@@ -1,5 +1,5 @@
 
-def get_hashtag_tweets(verbose = 1, private = False):
+def get_keyword_tweets(verbose = 1, private = False):
     import json
     import tweepy
     import csv
@@ -33,4 +33,5 @@ def get_hashtag_tweets(verbose = 1, private = False):
       if verbose:
         sys.stdout.write('\r'+str(n) + ' tweets added to csv file')
         sys.stdout.flush()
-get_hashtag_tweets()
+if __name__ == '__main__':
+    get_hashtag_tweets()
