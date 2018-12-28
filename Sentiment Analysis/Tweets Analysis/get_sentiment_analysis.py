@@ -33,8 +33,7 @@ def get_polabirty(tweet):
   pol = tweet.polarity
   return pol
 
-def get_sentiment_analysis(freq_plot = False):
-  global df
+def get_sentiment_analysis(df, freq_plot = False):
   import nltk
   import matplotlib.pyplot as plt
   from nltk.probability import FreqDist
@@ -48,5 +47,6 @@ def get_sentiment_analysis(freq_plot = False):
   print("THE AVERAGE POLARITY",np.mean(df["polarity"])) #gives the average sentiments of people
   print("THE MOST -VE TWEET :",df.iloc[df['polarity'].idxmin()][['created', 'text']])# most positive
   print("THE MOST +VE TWEET :",df.iloc[df['polarity'].idxmax()][['created', 'text']])#most negetive
+  return df
 
   
