@@ -77,7 +77,6 @@ def get_user_tweets(private = False):
         writer = csv.writer(f)
         writer.writerow(['id', 'created_at', 'text'])
         writer.writerows(outtweets)
-    !rm 'twitter_credentials.json'
 
 if __name__ == '__main__':
     # Enter the twitter handle of the person concerned
