@@ -29,7 +29,7 @@ def clean_text(tweets, n = 0):
   return " ".join(tweets)
   
 #get polarity
-def get_polabirty(tweet):
+def get_polarity(tweet):
   from textblob import TextBlob
   tweet = TextBlob(tweet)
   pol = tweet.polarity
