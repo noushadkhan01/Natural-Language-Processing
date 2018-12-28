@@ -28,7 +28,6 @@ def clean_text(tweets):
   
 #get polarity
 def get_polabirty(tweet):
-  !pip install textblob
   from textblob import TextBlob
   tweet = TextBlob(tweet)
   pol = tweet.polarity
