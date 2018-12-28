@@ -48,8 +48,9 @@ def get_sentiment_analysis(df, freq_plot = False):
   df['polarity'] = df['cleaned_text'].apply(get_polarity)
   
   print("THE AVERAGE POLARITY",np.mean(df["polarity"])) #gives the average sentiments of people
-  print("THE MOST -VE TWEET :",df.iloc[df['polarity'].idxmin()][['created', 'text']])# most positive
-  print("THE MOST +VE TWEET :",df.iloc[df['polarity'].idxmax()][['created', 'text']])#most negetive
+  print("THE MOST -VE TWEET :",df[['created', 'text']][df.polarity == df.polarity.min()))# most positive
+  
+  print("THE MOST +VE TWEET :",df[['created', 'text']][df.polarity == df.polaritiy.min()))#most negetive
   return df
 
   
