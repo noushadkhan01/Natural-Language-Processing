@@ -1,11 +1,11 @@
-def clean_text(tweets):
-  import string,re
-  import nltk
-  from nltk.tokenize import word_tokenize
-  from nltk.corpus import stopwords
-  nltk.download('punkt')
-  nltk.download('stopwords')
-  nltk.download('brown')
+import string,re
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('brown')
+def clean_text(tweets, n = 0):
   tweets = word_tokenize(tweets)  #SEPERATE EACH WORD
   while True:
     try:
@@ -36,7 +36,6 @@ def get_polabirty(tweet):
   return pol
 
 def get_sentiment_analysis(df, freq_plot = False):
-  import nltk
   import matplotlib.pyplot as plt
   from nltk.probability import FreqDist
   if freq_plot:
