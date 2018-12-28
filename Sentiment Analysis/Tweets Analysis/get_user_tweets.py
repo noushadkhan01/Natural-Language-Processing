@@ -6,7 +6,7 @@ def get_user_tweets(private = False):
     import json
     #upload twitter api credential
     from google.colab import files
-    
+    print('Upload twitter_credential')
     try:
         file.upload().verbose()
     except:
@@ -77,6 +77,7 @@ def get_user_tweets(private = False):
         writer = csv.writer(f)
         writer.writerow(['id', 'created_at', 'text'])
         writer.writerows(outtweets)
+    !rm 'twitter_credentials.json'
 
 if __name__ == '__main__':
     # Enter the twitter handle of the person concerned
