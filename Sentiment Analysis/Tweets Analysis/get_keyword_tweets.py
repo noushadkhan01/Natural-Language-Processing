@@ -6,6 +6,11 @@ def get_keyword_tweets(verbose = 1, private = False):
     import sys
     import getpass
     from google.colab import files
+    try:
+        print('Upload twitter_credential')
+        files.upload().verbose()
+    except:
+        print('Done!!!')
     with open('twitter_credentials.json') as cred_data:
         info = json.load(cred_data)
         consumer_key = info['CONSUMER_KEY']
